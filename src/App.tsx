@@ -8,6 +8,7 @@ import Technologie from "./pages/Technologie";
 import Vorteile from "./pages/Vorteile";
 import Anwendung from "./pages/Anwendung";
 import Forschung from "./pages/Forschung";
+import UeberUns from "./pages/UeberUns";
 import Kontakt from "./pages/Kontakt";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/vorteile" element={<Vorteile />} />
           <Route path="/anwendung" element={<Anwendung />} />
           <Route path="/forschung" element={<Forschung />} />
+          <Route path="/ueber-uns" element={<UeberUns />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
