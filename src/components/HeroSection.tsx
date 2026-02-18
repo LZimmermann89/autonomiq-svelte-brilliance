@@ -23,7 +23,7 @@ export function HeroSection() {
         <div
           className="absolute w-full h-0.5 opacity-0"
           style={{
-            background: "linear-gradient(90deg, transparent, hsl(195 100% 50% / 0.4), transparent)",
+            background: "linear-gradient(90deg, transparent, rgba(37,99,235,0.4), transparent)",
             animation: "scan-line 8s ease-in-out infinite",
           }}
         />

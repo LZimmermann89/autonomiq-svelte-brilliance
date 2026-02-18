@@ -29,10 +29,10 @@ export function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <span className="relative flex h-7 w-7 items-center justify-center rounded-sm bg-primary">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z" stroke="hsl(220,47%,5%)" strokeWidth="1.5" fill="none"/>
-              <circle cx="8" cy="8" r="2.5" fill="hsl(220,47%,5%)"/>
-            </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z" stroke="#ffffff" strokeWidth="1.5" fill="none"/>
+                <circle cx="8" cy="8" r="2.5" fill="#ffffff"/>
+              </svg>
           </span>
           <span className="font-bold text-lg tracking-tight text-foreground group-hover:text-primary transition-colors">
             autono<span className="text-primary">IQ</span>
