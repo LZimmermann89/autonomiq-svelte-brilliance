@@ -60,13 +60,13 @@ export function AdvantagesSection() {
               Entwickelt am renommierten PTW-Institut der TU Darmstadt, vereint es jahrelange
               Fertigungsexpertise mit modernster KI.
             </p>
-            <a
-              href="#kontakt"
+            <Link
+              to="/kontakt"
               className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-200"
             >
               Jetzt Pilotprogramm anfragen
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
 
           {/* Right: Advantage cards */}
