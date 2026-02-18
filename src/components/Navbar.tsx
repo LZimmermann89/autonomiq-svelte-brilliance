@@ -35,7 +35,7 @@ export function Navbar() {
               </svg>
           </span>
           <span className="font-bold text-lg tracking-tight text-foreground group-hover:text-primary transition-colors">
-            autono<span className="text-primary">IQ</span>
+            autonom<span className="text-primary">IQ</span>
           </span>
         </a>
 
