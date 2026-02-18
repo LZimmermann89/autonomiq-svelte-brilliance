@@ -1,4 +1,5 @@
 import heroCNC from "@/assets/hero-cnc.jpg";
+import { Link } from "react-router-dom";
 
 export function HeroSection() {
   return (
