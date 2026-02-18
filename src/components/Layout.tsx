@@ -32,7 +32,7 @@ function Logo() {
         </svg>
       </span>
       <span className="font-bold text-xl tracking-tight text-foreground group-hover:text-primary transition-colors">
-        autono<span className="text-primary">IQ</span>
+        autonom<span className="text-primary">IQ</span>
       </span>
     </Link>
   );
