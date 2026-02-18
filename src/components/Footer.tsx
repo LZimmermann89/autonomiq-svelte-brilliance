@@ -17,7 +17,7 @@ export function Footer() {
                 </svg>
               </span>
               <span className="font-bold text-lg tracking-tight text-foreground">
-                autono<span className="text-primary">IQ</span>
+                autonom<span className="text-primary">IQ</span>
               </span>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
