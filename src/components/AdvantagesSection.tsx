@@ -1,4 +1,5 @@
 import { CheckCircle2, Clock, TrendingDown, Shield, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const advantages = [
   {

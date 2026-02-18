@@ -1,3 +1,4 @@
+// Footer is now handled by Layout.tsx
 export function Footer() {
   const year = new Date().getFullYear();
 
