@@ -58,21 +58,21 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="animate-fade-in-up delay-300 flex flex-wrap gap-4">
-            <a
-              href="#kontakt"
+            <Link
+              to="/kontakt"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-all animate-pulse-glow"
             >
               Pilotanwender werden
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-1">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
-            <a
-              href="#technologie"
+            </Link>
+            <Link
+              to="/technologie"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm border border-border text-foreground font-medium text-base hover:border-primary/60 hover:text-primary transition-all"
             >
               Technologie entdecken
-            </a>
+            </Link>
           </div>
 
           {/* Stats row */}
