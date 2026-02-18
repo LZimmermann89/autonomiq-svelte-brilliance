@@ -7,8 +7,20 @@ const navLinks = [
   { label: "Vorteile", href: "/vorteile" },
   { label: "Anwendung", href: "/anwendung" },
   { label: "Forschung", href: "/forschung" },
+  { label: "Über uns", href: "/ueber-uns" },
   { label: "Kontakt", href: "/kontakt" },
 ];
+
+const allRouteLabels: Record<string, string> = {
+  "/technologie": "Technologie",
+  "/vorteile": "Vorteile",
+  "/anwendung": "Anwendung",
+  "/forschung": "Forschung",
+  "/ueber-uns": "Über uns",
+  "/kontakt": "Kontakt",
+  "/impressum": "Impressum",
+  "/datenschutz": "Datenschutzerklärung",
+};
 
 function Logo() {
   return (
@@ -38,17 +50,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <Logo />
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-0.5">
             {navLinks.map((l) => {
               const active = location.pathname === l.href;
               return (
                 <Link
                   key={l.href}
                   to={l.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                     active
                       ? "bg-primary/15 text-primary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                 >
                   {l.label}
@@ -69,7 +81,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+            className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             onClick={() => setOpen(!open)}
             aria-label="Menü"
           >
@@ -90,7 +102,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                         active
                           ? "bg-primary/15 text-primary"
-                          : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
                       }`}
                       onClick={() => setOpen(false)}
                     >
@@ -114,14 +126,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         )}
       </header>
 
-      {/* ── Breadcrumb (für Unterseiten) ── */}
+      {/* ── Breadcrumb (Unterseiten) ── */}
       {location.pathname !== "/" && (
-        <div className="border-b border-border bg-secondary/20">
+        <div className="border-b border-border bg-muted/20">
           <div className="max-w-screen-xl mx-auto px-4 py-2.5 flex items-center gap-2 text-xs text-muted-foreground">
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight size={12} className="opacity-40" />
             <span className="text-foreground font-medium">
-              {navLinks.find((l) => l.href === location.pathname)?.label ?? "Seite"}
+              {allRouteLabels[location.pathname] ?? "Seite"}
             </span>
           </div>
         </div>
@@ -132,17 +144,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       {/* ── Footer ── */}
       <footer className="border-t border-border bg-card/40">
-        <div className="max-w-screen-xl mx-auto px-4 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-screen-xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {/* Brand */}
             <div className="lg:col-span-2">
               <Logo />
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
                 Intelligente CAM-Software für die CNC-Fertigung. Entwickelt am PTW Institut der TU Darmstadt.
               </p>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Ein Projekt des{" "}
+                <strong className="text-muted-foreground/80">
+                  Instituts für Produktionsmanagement, Technologie und Werkzeugmaschinen (PTW)
+                </strong>
+              </p>
             </div>
+
+            {/* Navigation */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Navigation</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {navLinks.map((l) => (
                   <li key={l.href}>
                     <Link to={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -152,20 +173,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 ))}
               </ul>
             </div>
+
+            {/* Legal & Contact */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Rechtliches</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 <li><Link to="/impressum" className="text-sm text-muted-foreground hover:text-primary transition-colors">Impressum</Link></li>
                 <li><Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">Datenschutzerklärung</Link></li>
               </ul>
               <div className="mt-5 space-y-1">
                 <p className="text-xs text-muted-foreground">Otto-Berndt-Straße 2, 64287 Darmstadt</p>
-                <a href="mailto:info@autonomiq.de" className="text-xs text-primary hover:underline block">info@autonomiq.de</a>
+                <a href="mailto:info@autonomiq.de" className="text-xs text-primary hover:underline block mt-2">info@autonomiq.de</a>
                 <a href="tel:+4961518229758" className="text-xs text-muted-foreground hover:text-primary transition-colors block">+49 6151 8229-758</a>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Copyright */}
         <div className="border-t border-border/50">
           <div className="max-w-screen-xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
             <p>© {new Date().getFullYear()} autonomIQ · TU Darmstadt PTW. Alle Rechte vorbehalten.</p>
